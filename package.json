@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1",
+    "msnodesqlv8": "^5.1.1",
+    "mssql": "^12.0.0",
+    "pool": "^0.4.1"
+  }
+}
