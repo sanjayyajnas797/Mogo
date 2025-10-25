@@ -1,11 +1,13 @@
-const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 
 const config = {
-  server: 'DESKTOP-QHSU4JN',
+  user: 'soundu',              // SQL Auth username
+  password: 'sias',  // SQL Auth password
+  server: 'DESKTOP-QHSU4JN',    // your server name or IP
   database: 'SANJAY',
-  driver: 'msnodesqlv8',
   options: {
-    trustedConnection: true, // ✅ Windows Authentication
+    encrypt: true,                // for cloud deploy
+    trustServerCertificate: true, // self-signed cert
   },
 };
 
@@ -17,7 +19,7 @@ const connect = async () => {
     if (!poolConnect) {
       poolConnect = pool.connect();
       await poolConnect;
-      console.log('✅ Connected to SQL Server using Windows Authentication');
+      console.log('✅ Connected to SQL Server using SQL Authentication');
     }
   } catch (err) {
     console.error('❌ SQL Server connection error:', err);
